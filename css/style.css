@@ -1,0 +1,18 @@
+td, th {
+    padding: 5px;
+    border: 1px solid gray;
+}
+
+table {
+    width: 100%;
+}
+.red {
+    background-color: red;
+}
+.green {
+    background-color: green;
+}
+
+body {
+    padding: 40px;
+}
