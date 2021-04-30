@@ -1,136 +1,149 @@
-const table = document.getElementById('table');
-const sub = document.getElementById('subject');
-const formWrap = document.querySelector('#form div');
+class Student {
 
-let html = '';
+    name = '';
+    grades = [];
 
-let subjects = ['', 'html', 'css', 'js', 'react', 'angular'];
-
-let students = [
-    {
-        name: 'nika',
-        grades: [12, 42, 93, 74, 35]
-    },
-    {
-        name: 'mari',
-        grades: [54, 23, 31, 45, 52]
-    },
-    {
-        name: 'toko',
-        grades: [61, 42, 63, 46, 53]
-    },
-    {
-        name: 'giga',
-        grades: [21, 52, 13, 16, 23]
-    }
-];
-
-function studentsGenerate() {
-
-    html += '<tr>';
-    for (i = 0; i < subjects.length; i++) {
-        html += `<th>${subjects[i]}</th>`;
+    addName(name) {
+        this.name = name;
     }
 
-    html += '</tr>';
+    addGrade(grade) {
+        this.grades.push(grade);
+    }
+}
 
-    let sum = Array(subjects.length - 1).fill(0);
-    console.log(sum);
-    for (i = 0; i < students.length; i++) {
-        let student = students[i];
+class Table {
 
-        html += '<tr>';
-        html += `<td>${student.name}</td>`;
+    html = '';
+    students = [
+        {
+            name: 'nika',
+            grades: [12, 42, 93, 74, 35]
+        },
+        {
+            name: 'mari',
+            grades: [54, 23, 31, 45, 52]
+        },
+        {
+            name: 'toko',
+            grades: [61, 42, 63, 46, 53]
+        },
+        {
+            name: 'giga',
+            grades: [21, 52, 13, 16, 23]
+        }
+    ];
+    subjects = ['', 'html', 'css', 'js', 'react', 'angular'];
 
-        for (j = 1; j < subjects.length; j++) {
-            const grade = student.grades[j - 1] || 0;
-            sum[j - 1] += grade;
+    constructor() {
+        this.table = document.getElementById('table');
+        this.sub = document.getElementById('subject');
+        this.formWrap = document.querySelector('#form div');
+    }
 
-            if (i === students.length - 1) {
-                sum[j - 1] = Math.round(sum[j - 1] / students.length);
+    addStudnet(event) {
+        const formInput = document.querySelectorAll('#form input');
+        const student = new Student;
+    
+        for (let i = 0; i < formInput.length; i++) {
+            if (formInput[i].name === 'name') {
+                student.addName(formInput[i].value);
+            } else {
+                student.addGrade(+formInput[i].value);
             }
-            html += `<td class= "${grade > 50 ? "green" : "red"}">${grade}</td>`;
         }
 
-        // html += `<td>${student.grades.reduce((a, b) => a + b, 0) / student.grades.length}</td>`;
-
-        html += '</tr>';
-
+        this.students.push(student);
+        
+        this.render();
     }
-    average(sum);
-    console.log(sum);
-    table.innerHTML = html;
-}
 
-function addStudent(event) {
-    event.preventDefault();
-    let formInput = document.querySelectorAll('#form input');
-    console.log(formInput);
-    let newStudent = {
-        name: '',
-        grades: []
-    };
+    addSubjects(event) {
+        event.preventDefault();
 
-    for (let i = 0; i < formInput.length; i++) {
-        if (formInput[i].name === 'name') {
-            newStudent.name = formInput[i].value;
-        } else {
-            newStudent.grades.push(+formInput[i].value);
+        this.subjects.push(event.target.value);
+        this.render();
+    }
+
+    studentsGenerate() {
+        this.html = '';
+        this.html += '<tr>';
+
+        for (let i = 0; i < this.subjects.length; i++) {
+            this.html += `<th>${this.subjects[i]}</th>`;
         }
+    
+        this.html += '</tr>';
+    
+        let sum = Array(this.subjects.length - 1).fill(0);
+
+        for (let i = 0; i < this.students.length; i++) {
+            let student = this.students[i];
+    
+            this.html += '<tr>';
+            this.html += `<td>${student.name}</td>`;
+    
+            for (let j = 1; j < this.subjects.length; j++) {
+                const grade = student.grades[j - 1] || 0;
+                sum[j - 1] += grade;
+    
+                if (i === this.students.length - 1) {
+                    sum[j - 1] = Math.round(sum[j - 1] / this.students.length);
+                }
+                this.html += `<td class= "${grade > 50 ? "green" : "red"}">${grade}</td>`;
+            }
+    
+            this.html += '</tr>';
+    
+        }
+
+        this.average(sum);
     }
-    console.log(newStudent);
-    students.push(newStudent);
-    html = " ";
-    studentsGenerate();
-}
-
-function average(average) {
-
-    console.log();
-
-    html += '<tr>';
-    html += `<td>Average</td>`;
-
-    for (i = 0; i < average.length; i++) {
-        html += `<td>${average[i]}</td>`;
-    }
-
-    html += '</tr>';
-
-    table.innerHTML = html;
-
-}
-
-studentsGenerate();
-generateInput();
-
-function addSubject(event) {
-    event.preventDefault();
-    subjects.push(sub.value);
-    html = "";
-    studentsGenerate();
-    generateInput();
-}
-
-function generateInput() {
-    let input = 
-    `<div>
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name">
-    </div>
-    `;
-
-    for (let i = 1; i < subjects.length; i++) {
-        input += 
-    `
-    <div>
-        <label for="number${i}">${subjects[i]}</label>
-        <input type="number" id="number${i}">
-    </div>
-    `
+    
+    average(average) {
+        this.html += '<tr>';
+        this.html += `<td>Average</td>`;
+    
+        for (let i = 0; i < average.length; i++) {
+            this.html += `<td>${average[i]}</td>`;
+        }
+    
+        this.html += '</tr>';
     }
 
-    formWrap.innerHTML = input;
+    generateInput() {
+        let input = 
+            `<div>
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name">
+            </div>
+            `;
+    
+        for (let i = 1; i < this.subjects.length; i++) {
+            input += 
+                `
+                <div>
+                    <label for="number${i}">${this.subjects[i]}</label>
+                    <input type="number" id="number${i}">
+                </div>
+                `
+        }
+
+        this.formWrap.innerHTML = input;
+    }
+
+    
+    render() {
+        this.generateInput();
+        this.studentsGenerate();
+
+        this.table.innerHTML = this.html;
+    }
 }
 
-Test
+const TABLE = new Table();
+
+document.getElementById('add-student').addEventListener('click', TABLE.addStudnet.bind(TABLE));
+document.getElementById('add-subject').addEventListener('click', TABLE.addSubjects.bind(TABLE));
+
+TABLE.render();
