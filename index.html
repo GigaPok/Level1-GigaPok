@@ -11,7 +11,34 @@
 </head>
 
 <body>
-    <p>Test P</p>
+    <form action="#">
+        <input class="textbox" id="searchText" type="text">
+        <button class="button" id="searchBtn"> Search </button>
+    </form>
+    <div id="artistList">
+        <span id="singer-text"></span>
+        <div class="for-width">
+            <p id="country-name-title"></p>
+            <div id="countryName">
+            </div>
+        </div>
+        <div class="for-width">
+            <p id="artist-name-title"></p>
+            <div id="artistName">
+            </div>
+        </div>
+        <div class="for-width">
+            <p id="previewUrl-name-title"></p>
+            <div id="previewUrl">
+            </div>
+        </div>
+        <div class="for-width">
+            <p id="trackPrice-name-title"></p>
+            <div id="trackPrice">
+            </div>
+        </div>
+    </div>
+    <script src="js-fetch.js"></script>
 </body>
 
 </html>
