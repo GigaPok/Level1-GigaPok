@@ -4,7 +4,9 @@ let searchBtn = document.querySelector('#searchBtn').addEventListener("click", s
 
 searchText.value = '';
 
-function search() {
+function search(event) {
+
+    event.preventDefault();
 
     let countryName = document.querySelector('#countryName');
     let countryNameTitle = document.querySelector('#country-name-title');
