@@ -90,7 +90,42 @@ img {
 .active {
     display: block;
 }
+/* Modal */
 
+.modal {
+    background-color: aqua;
+    width: 43%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    border-radius: 29px;
+    cursor: pointer;
+    margin-top: 40px;
+}
+
+#modal-active {
+    display: none;
+}
+
+.test-modal {
+    background-color: aqua;
+    width: 38%;
+    height: 240px;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    border-radius: 29px;
+    cursor: pointer;
+    margin-top: 40px;
+    flex-direction: column;
+    justify-content: space-around;
+    position: absolute;
+    top: 20px;
+    visibility: visible !important;
+}
 
 
 

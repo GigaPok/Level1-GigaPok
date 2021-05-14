@@ -52,3 +52,16 @@ function showSlides(n) {
 
     slides[slideIndex - 1].classList.add('active')
 }
+
+// modal
+
+let modals = document.querySelector('modal');
+let modaActive = document.querySelector('#modal-active');
+
+function modal() {
+    modaActive.classList.add('test-modal')
+}
+
+function closeModal () {
+    modaActive.classList.remove('test-modal')
+}
