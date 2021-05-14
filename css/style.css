@@ -61,6 +61,35 @@ nav {
     height: 100px;
 }
 
+/* Slider */
+
+.slideshow-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
+    height: 300px;
+}
+
+.prev, .next {
+    font-size: 40px;
+    cursor: pointer;
+    color: coral;
+}
+
+.mySlides {
+    display: none;
+}
+
+.active {
+    display: block;
+}
 
 
 
