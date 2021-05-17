@@ -1,0 +1,13 @@
+.col {
+    background-color: brown;
+    margin-left: 10px;
+}
+.row {
+    margin-top: 30px;
+}
+.slider {
+    background-image: url(../img/1.jpg);
+    background-size: cover;
+    height: 640px;
+    width: 100%;
+}
