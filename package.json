@@ -11,7 +11,8 @@
     "sass": "^1.34.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "sass ./assets/main.scss ./css/style2.css"
   },
   "repository": {
     "type": "git",
