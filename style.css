@@ -10729,8 +10729,296 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-body {
-  background-color: #faaf0c;
+.rounded-circle {
+  width: 20px;
+  height: 20px;
+  display: flex;
 }
 
-/*# sourceMappingURL=style2.css.map */
+.fashion-trends {
+  background-image: url(../img/b-image.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+}
+
+svg {
+  margin-right: 12px;
+  width: 60px;
+  height: 60px;
+}
+
+.card-box {
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.form-outline {
+  border: 1px solid #eeeeee !important;
+}
+
+.card-img-top {
+  object-fit: contain;
+  height: 230px;
+}
+
+.bg-light0 {
+  background-color: #D0EDFF;
+}
+
+.bg-light1 {
+  background-color: #F1E7E6;
+}
+
+.bg-light2 {
+  background-color: #BFBFBF;
+}
+
+header {
+  background-color: #f8f8f8;
+}
+
+.nav-item a {
+  padding-right: 45px;
+  color: #222222;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 23px;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding-top: 42px;
+  padding-bottom: 42px;
+  letter-spacing: 0.07em;
+}
+
+.logo {
+  object-fit: contain;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
+html {
+  height: -webkit-fill-available;
+}
+
+main {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100vh;
+  height: -webkit-fill-available;
+  max-height: 100vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.b-example-divider {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: solid rgba(0, 0, 0, 0.15);
+  border-width: 1px 0;
+  box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1), inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
+}
+
+.bi {
+  vertical-align: -0.125em;
+  pointer-events: none;
+  fill: currentColor;
+}
+
+.dropdown-toggle {
+  outline: 0;
+}
+
+.nav-flush .nav-link {
+  border-radius: 0;
+}
+
+.btn-toggle {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.65);
+  background-color: transparent;
+  border: 0;
+  justify-content: space-between !important;
+  width: 100%;
+}
+
+.btn-toggle:hover,
+.btn-toggle:focus {
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #d2f4ea;
+}
+
+.btn-toggle::after {
+  width: 1.25em;
+  line-height: 0;
+  content: "";
+  font-family: FontAwesome;
+  transition: transform 0.35s ease;
+  transform-origin: 0.5em 50%;
+}
+
+.btn-toggle[aria-expanded=true] {
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.btn-toggle[aria-expanded=true]::before {
+  transform: rotate(90deg);
+}
+
+.btn-toggle-nav a {
+  display: inline-flex;
+  padding: 0.1875rem 0.5rem;
+  margin-top: 0.125rem;
+  margin-left: 1.25rem;
+  text-decoration: none;
+}
+
+.btn-toggle-nav a:hover,
+.btn-toggle-nav a:focus {
+  background-color: #d2f4ea;
+}
+
+.scrollarea {
+  overflow-y: auto;
+}
+
+.fw-semibold {
+  font-weight: 600;
+}
+
+.lh-tight {
+  line-height: 1.25;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+.color-change li {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border: 1px solid #444444;
+  position: relative;
+}
+.color-change li.active-collor::after {
+  content: " ";
+  background-image: url(./img/svgActive.svg);
+  top: 9px;
+  right: 4px;
+  height: 15px;
+  width: 15px;
+  background-size: 70%;
+  background-repeat: no-repeat;
+  position: absolute;
+  opacity: 0.4;
+}
+.color-change .color-1 {
+  background-color: #fff;
+}
+.color-change .color-2 {
+  background-color: gray;
+}
+.color-change .color-3 {
+  background-color: red;
+}
+.color-change .color-4 {
+  background-color: purple;
+}
+.color-change .color-5 {
+  background-color: blue;
+}
+.color-change .color-6 {
+  background-color: yellow;
+}
+.color-change .color-7 {
+  background-color: purple;
+}
+
+/*# sourceMappingURL=style.css.map */
