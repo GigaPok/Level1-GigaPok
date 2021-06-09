@@ -1,14 +1,26 @@
-
 .App {
-  text-align: center;
   display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin: 50% auto;
+  margin: 50px auto;
+  justify-content: center;
 }
 
 button {
-  width: 50px;
+  background-color: bisque;
+  border-radius: 20px;
+  width: 80px;
   height: 50px;
+  cursor: pointer;
 }
-
+ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.delete {
+  background-color: red;
+  border-radius: 50px;
+  cursor: pointer;
+}
+input, select, textarea{
+  color: #000000;
+}

@@ -49,7 +49,7 @@ const Todo = () => {
                             <input type='checkbox' checked={el.checked}
                                 onChange={() => { handleStatus(index) }}></input>
                             {el.tittle}
-                            <button onClick={() => { handleDelete(index) }}>Del</button>
+                            <button className='delete' onClick={() => { handleDelete(index) }}>Del</button>
                         </li>)
                 }
                 )
