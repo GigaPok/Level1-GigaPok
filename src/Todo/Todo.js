@@ -14,7 +14,8 @@ const Todo = () => {
 
             {
                 tittle: tittle,
-                checked: false
+                checked: false,
+                edit: false,
             },
             ...data
 
@@ -35,6 +36,24 @@ const Todo = () => {
         tmp[index].checked = !tmp[index].checked;
         setData(tmp);
     }
+    let handleEdit = (index) => {
+        setData(data.map((el, x) => {
+
+            if (index == x) {
+                el.edit = !el.edit;
+            }
+
+            return el;
+        })
+        )
+    }
+
+    let changeText = (index, e) => {
+        let tmp = [...data];
+        tmp[index].tittle = e.target.value;
+
+        setData(tmp);
+    }
     return (
         <div>
             <form onSubmit={handleSubmit}>
@@ -48,7 +67,11 @@ const Todo = () => {
                         <li key={index}>
                             <input type='checkbox' checked={el.checked}
                                 onChange={() => { handleStatus(index) }}></input>
-                            {el.tittle}
+                            {el.edit ? (
+                                <input value={el.tittle} onChange={(e) => { changeText(index, e) }} />
+                            ) : el.tittle}
+
+                            <button onClick={() => { handleEdit(index) }}>{el.edit ? "Done" : "edit"}</button>
                             <button className='delete' onClick={() => { handleDelete(index) }}>Del</button>
                         </li>)
                 }
